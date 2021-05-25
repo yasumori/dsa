@@ -1,4 +1,4 @@
-# practice and learn datastructures and algorithms in C++
+# practice and learn data structures and algorithms in C++
 
 # sorting
 - selection sort:

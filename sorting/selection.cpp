@@ -1,16 +1,16 @@
-#include <cstdlib>
 #include <iostream>
+
 using namespace std;
 
-const int n = 7;
-
-void swap(int *a, int *b) {
-    int temp = *a;
+template <typename T>
+void swap(T *a, T *b) {
+    T tmp = *a;
     *a = *b;
-    *b = temp;
+    *b = tmp;
 }
 
-void printArray(int arr[]) {
+template <typename T>
+void printArray(T arr[], int n) {
     int i = 0;
     cout << "current array: ";
     while (i < n) {
@@ -20,27 +20,35 @@ void printArray(int arr[]) {
     cout << endl;
 }
 
-void selectionSort(int arr[]) {
-    int i, j, min, minIndex;
-    for (i = 0; i < n; i ++) {
-        min = arr[i];
-        minIndex = i;
+template <typename T>
+void selectionSort(T arr[], int n) {
+    int i, j, min, min_idx;
+    for (i = 0; i < n; i++) {
+        min_idx = i;
         for (j = i+1; j < n; j++) {
-            if (arr[j] < min) {
-                min = arr[j];
-                minIndex = j;
+            if (arr[j] < arr[min_idx]) {
+                min_idx = j;
             }
         }
-        swap(arr[i], arr[minIndex]);
-        printArray(arr);
+        swap(&arr[i], &arr[min_idx]);
+        printArray(arr, n);
     }
 }
 
 int main(void) {
-    int array[] = {33, 4, 67, -14, 908, 77, 21};
-    printArray(array);
-    cout << "Start sorting" << endl;
-    selectionSort(array);
+    const int n = 5;
+    int i_array[] = {33, 1, 10, 5, 2};
+
+    printArray(i_array, n);
+    cout << "Int Array Start sorting" << endl;
+    selectionSort(i_array, n);
     cout << "Finish sorting" << endl;
-    return EXIT_SUCCESS;
+
+    float f_array[] = {0.9, 0.8, 0.5, 0.3, -0.1};
+    printArray(f_array, n);
+    cout << "\nFloat Array Start sorting" << endl;
+    selectionSort(f_array, n);
+    cout << "Finish sorting" << endl;
+
+    return 0;
 }
