@@ -1,28 +1,12 @@
+#include "utils.h"
+
 #include <iostream>
 
 using namespace std;
 
 template <typename T>
-void swap(T *a, T *b) {
-    T tmp = *a;
-    *a = *b;
-    *b = tmp;
-}
-
-template <typename T>
-void printArray(T arr[], int n) {
-    int i = 0;
-    cout << "current array: ";
-    while (i < n) {
-        cout << arr[i] << " ";
-        i++;
-    }
-    cout << endl;
-}
-
-template <typename T>
 void selectionSort(T arr[], int n) {
-    int i, j, min, min_idx;
+    int i, j, min_idx;
     for (i = 0; i < n; i++) {
         min_idx = i;
         for (j = i+1; j < n; j++) {
@@ -35,7 +19,7 @@ void selectionSort(T arr[], int n) {
     }
 }
 
-int main(void) {
+int main() {
     const int n = 5;
     int i_array[] = {33, 1, 10, 5, 2};
 
