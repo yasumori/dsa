@@ -6,6 +6,8 @@ This is my brain exercise.
 
 ## sorting
 
+- bubble sort: Runs in O(N^2) time in the worst case. O(N) when array is already sorted.
+
 - selection sort: runs in O(n^2) time in the best/worst case. There are two loops inside the algorithm.
 
 - insertion sort: runs in O(n^2) time in the worst case, but in a linear order when elements are sorted from the beginning.
