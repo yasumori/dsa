@@ -12,6 +12,7 @@ This is my brain exercise.
 
 - insertion sort: runs in O(n^2) time in the worst case, but in a linear order when elements are sorted from the beginning.
 
+- quick sort: runs in O(N^2) when pivot is always the smallest or largest value, but in practice, it runs in O(nlogn) time. This algorithm can be run in-place and good when the data size is small, but when the data size is large and an extra storage space is available, Merge Sort can be better.
 ---
 
 ## Some notes for my learning
